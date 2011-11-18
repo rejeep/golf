@@ -3,6 +3,9 @@ en:
     photos:
       name: 'Photos'
       description: 'Collection of photos from course and training'
+    videos:
+      name: 'Videos'
+      description: 'Collection of videos of my swing'
     fallback:
       name: 'Johan Andersson Golf'
       description: 'A golfer on the move'

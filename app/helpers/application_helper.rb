@@ -9,4 +9,12 @@ module ApplicationHelper
       link_to t("menu.#{name}"), path
     end
   end
+  
+  def sidebar(&block)
+    content_for(:sidebar, &block)
+  end
+  
+  def slider(&block)
+    content_for(:slider, &block)
+  end
 end
