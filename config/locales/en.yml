@@ -1,5 +1,8 @@
 en:
   page:
+    about:
+      name: 'About'
+      description: 'Some info about me'
     photos:
       name: 'Photos'
       description: 'Collection of photos from course and training'
