@@ -1,6 +1,10 @@
 en:
   page:
-    name: 'Johan Andersson Golf'
-    description: 'A golfer on the move'
+    photos:
+      name: 'Photos'
+      description: 'Collection of photos from course and training'
+    fallback:
+      name: 'Johan Andersson Golf'
+      description: 'A golfer on the move'
   menu:
     root: 'Home'

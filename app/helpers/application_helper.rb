@@ -1,12 +1,6 @@
 module ApplicationHelper
-  def page_name
-    @page_name || t('page.name')
-  end
-  
-  def page_description
-    @page_name || t('page.description')
-  end
-  
+  attr_reader :page_name, :page_description
+
   def menu_link(name)
     path = send("#{name}_path")
     options = {}
