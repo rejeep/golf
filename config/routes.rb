@@ -1,4 +1,10 @@
 Golf::Application.routes.draw do
+  namespace :admin do
+    root :to => 'startpage#index'
+
+    resources :photos
+  end
+
   root :to => 'startpage#index'
 
   resources :photos

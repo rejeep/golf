@@ -1,0 +1,11 @@
+<h2>Photos</h2>
+<ul>
+  <% @photos.each do |photo| %>
+    <li>
+      <%= image_tag photo.image.url(:thumb) %>
+      <%= photo.description %>
+      <%= link_to 'edit', edit_admin_photo_path(photo), :class => 'btn' %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to 'Add photo', new_admin_photo_path %>

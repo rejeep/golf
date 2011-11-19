@@ -1,0 +1,9 @@
+<%= simple_form_for [:admin, @photo], :html => { :multipart => true } do |form| %>
+  <% if @photo.image.present? %>
+    <%= image_tag @photo.image.url(:thumb) %>
+  <% end %>
+  <%= form.input :image, :as => :file %>
+  <%= form.input :description %>
+  
+  <%= form.submit %>
+<% end %>
