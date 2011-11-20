@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Johan Andersson Golf</title>
+    <title>Golf</title>
     <%= stylesheet_link_tag 'application' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
@@ -10,7 +10,7 @@
     <div class="topbar">
       <div class="fill">
         <div class="container">
-          <%= link_to 'Johan Andersson Golf', root_path, :class => 'brand' %>
+          <%= link_to 'Golf', root_path, :class => 'brand' %>
           <ul class="nav">
             <%= menu_link :root %>
             <%= menu_link :photos %>
@@ -39,7 +39,7 @@
       </div>
 
       <footer>
-        <p>&copy; Johan Andersson Golf <%= Date.today.year %></p>
+        <p>&copy; Golf <%= Date.today.year %></p>
       </footer>
 
     </div>

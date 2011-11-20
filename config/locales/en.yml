@@ -10,7 +10,7 @@ en:
       name: 'Videos'
       description: 'Collection of videos of my swing'
     fallback:
-      name: 'Johan Andersson Golf'
-      description: 'A golfer on the move'
+      name: 'Golf'
+      description: 'Because you are worth it!'
   menu:
     root: 'Home'
