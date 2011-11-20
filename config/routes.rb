@@ -4,6 +4,7 @@ Golf::Application.routes.draw do
 
     resources :photos
     resources :events
+    resources :videos
   end
 
   root :to => 'startpage#index'

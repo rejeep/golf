@@ -1,0 +1,8 @@
+<%= simple_form_for [:admin, @video], :html => { :multipart => true } do |form| %>
+  <%= form.association :event %>
+  <%# show video %>
+  <%= form.input :movie, :as => :file %>
+  <%= form.input :description %>
+  
+  <%= form.submit %>
+<% end %>
