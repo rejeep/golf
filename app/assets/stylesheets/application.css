@@ -4,8 +4,9 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require bootstrap
  *= require_self
+ *= require fancybox
  *= require_tree .
- */
+*/
 
 html, body {
   background-color: #eee;

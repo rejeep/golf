@@ -1,70 +1,17 @@
 <% sidebar do %>
-  <h2>Photo sessions</h2>
+  <h2>Events</h2>
   <ul>
-    <li>Practice - 2011-10-01</li>
-    <li>Kungsbacka GK - 2011-06-22</li>
+    <%= render @events %>
   </ul>
 <% end %>
 
-<h2>Practice <small>2011-10-01</small></h2>
-<ul class="media-grid">
-  <li>
-    <%= link_to image_tag('foo', :size => '90x90'), '#' %>
-  </li>
-  <li>
-    <%= link_to image_tag('foo', :size => '90x90'), '#' %>
-  </li>
-  <li>
-    <%= link_to image_tag('foo', :size => '90x90'), '#' %>
-  </li>
-  <li>
-    <%= link_to image_tag('foo', :size => '90x90'), '#' %>
-  </li>
-  <li>
-    <%= link_to image_tag('foo', :size => '90x90'), '#' %>
-  </li>
-  <li>
-    <%= link_to image_tag('foo', :size => '90x90'), '#' %>
-  </li>
-  <li>
-    <%= link_to image_tag('foo', :size => '90x90'), '#' %>
-  </li>
-  <li>
-    <%= link_to image_tag('foo', :size => '90x90'), '#' %>
-  </li>
-  <li>
-    <%= link_to image_tag('foo', :size => '90x90'), '#' %>
-  </li>
-  <li>
-    <%= link_to image_tag('foo', :size => '90x90'), '#' %>
-  </li>
-</ul>
-
-
-<h2>Kungsbacka GK <small>2011-06-22</small></h2>
-<ul class="media-grid">
-  <li>
-    <%= link_to image_tag('foo', :size => '90x90'), '#' %>
-  </li>
-  <li>
-    <%= link_to image_tag('foo', :size => '90x90'), '#' %>
-  </li>
-  <li>
-    <%= link_to image_tag('foo', :size => '90x90'), '#' %>
-  </li>
-  <li>
-    <%= link_to image_tag('foo', :size => '90x90'), '#' %>
-  </li>
-  <li>
-    <%= link_to image_tag('foo', :size => '90x90'), '#' %>
-  </li>
-  <li>
-    <%= link_to image_tag('foo', :size => '90x90'), '#' %>
-  </li>
-  <li>
-    <%= link_to image_tag('foo', :size => '90x90'), '#' %>
-  </li>
-  <li>
-    <%= link_to image_tag('foo', :size => '90x90'), '#' %>
-  </li>
-</ul>
+<% @events.each do |event| %>
+  <h3><%= event.name %></h3>
+  <ul class="media-grid">
+    <% event.photos.each do |photo| %>
+      <li>
+        <%= link_to image_tag(photo.image.url(:thumb)), photo.image.url, :rel => event.id %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
