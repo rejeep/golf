@@ -11,7 +11,9 @@
 
 <% slider do %>
   <div class="row" id="slider">
-    <%= image_tag 'me.png', :size => '760x300' %>
+    <% @slider_photos.each do |slider_photo| %>
+      <%= image_tag slider_photo.image.url %>
+    <% end %>
   </div>
 <% end %>
 

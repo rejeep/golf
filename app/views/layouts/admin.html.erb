@@ -8,6 +8,15 @@
   </head>
   <body>
     <h2><%= link_to 'Admin', admin_root_path %></h2>
+
+    <% if flash.present? %>
+      <div id="flash">
+        <% flash.each do |type, message| %>
+          <p class="alert-message <%= type %>"><%= message %></p>
+        <% end %>
+      </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

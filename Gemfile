@@ -13,7 +13,9 @@ end
 
 gem 'jquery-rails'
 gem 'fancybox-rails'
+gem 'jcrop-rails'
 gem 'css-bootstrap-rails'
+
 gem 'inherited_resources', '1.3.0'
 gem 'simple_form', '1.5.2'
 gem 'carrierwave', '0.5.8'

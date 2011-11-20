@@ -1,0 +1,13 @@
+<div id="cropbox">
+  <%= simple_form_for [:admin, @slider_photo], :url => crop_admin_slider_photo_path(@slider_photo) do |form| %>
+    <%= form.input :x, :as => :hidden %>
+    <%= form.input :y, :as => :hidden %>
+    <%= form.input :w, :as => :hidden %>
+    <%= form.input :h, :as => :hidden %>
+     
+    <%= image_tag @slider_photo.image.url, :width => 760 %>
+    <%= form.input :image, :as => :hidden %>
+
+    <%= form.submit %>
+  <% end %>
+</div>

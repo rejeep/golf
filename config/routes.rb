@@ -5,6 +5,12 @@ Golf::Application.routes.draw do
     resources :photos
     resources :events
     resources :videos
+    resources :slider_photos do
+      member do
+        get :select_dimensions
+        put :crop
+      end
+    end
   end
 
   root :to => 'startpage#index'
