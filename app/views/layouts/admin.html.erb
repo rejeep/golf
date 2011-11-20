@@ -7,7 +7,7 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <h2>Admin</h2>
+    <h2><%= link_to 'Admin', admin_root_path %></h2>
     <%= yield %>
   </body>
 </html>
