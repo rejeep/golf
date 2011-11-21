@@ -3,5 +3,5 @@ class SliderImageUploader < CarrierWave::Uploader::Base
 
   storage :file
   
-  process :resize_to_fit => [760 * 2, 10000]
+  process :resize_to_fit => [SliderPhoto::WIDTH * 2, 10000]
 end

@@ -5,7 +5,7 @@
     <%= form.input :w, :as => :hidden %>
     <%= form.input :h, :as => :hidden %>
      
-    <%= image_tag @slider_photo.image.url, :width => 760 %>
+    <%= image_tag @slider_photo.image.url, :width => SliderPhoto::WIDTH %>
     <%= form.input :image, :as => :hidden %>
 
     <%= form.submit %>

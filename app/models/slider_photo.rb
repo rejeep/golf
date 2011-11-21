@@ -1,4 +1,7 @@
 class SliderPhoto < ActiveRecord::Base
+  WIDTH = 700
+  HEIGHT = 250
+  
   mount_uploader :image, SliderImageUploader
   
   attr_writer :x, :y, :w, :h
@@ -6,7 +9,7 @@ class SliderPhoto < ActiveRecord::Base
   def crop!
     image.manipulate! do |img|
       img.crop!(x, y, w, h)
-      img.resize_to_fit(760, 250)
+      img.resize_to_fit(WIDTH, HEIGHT)
     end
   end
   

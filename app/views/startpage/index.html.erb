@@ -10,10 +10,12 @@
 <% end %>
 
 <% slider do %>
-  <div class="row" id="slider">
-    <% @slider_photos.each do |slider_photo| %>
-      <%= image_tag slider_photo.image.url %>
-    <% end %>
+  <div class="row">
+    <div id="slider" class="offset1 span12">
+      <% @slider_photos.each do |slider_photo| %>
+        <%= image_tag slider_photo.image.url %>
+      <% end %>
+    </div>
   </div>
 <% end %>
 

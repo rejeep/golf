@@ -2,13 +2,11 @@ class Admin::SliderPhotosController < InheritedResources::Base
   layout 'admin'
 
   def create
-    create! do
-      select_dimensions_admin_slider_photo_path(@slider_photo)
-    end
+    super(&redirect_to_select_dimensions)
   end
 
   def update
-    super(&redirect_to_index)
+    super(&redirect_to_select_dimensions)
   end
   
   def select_dimensions
@@ -33,7 +31,7 @@ class Admin::SliderPhotosController < InheritedResources::Base
 
   private
 
-  def redirect_to_index
-    Proc.new { admin_slider_photos_path }
+  def redirect_to_select_dimensions
+    Proc.new { select_dimensions_admin_slider_photo_path(@slider_photo) }
   end
 end
