@@ -1,5 +1,5 @@
 module ApplicationHelper
-  attr_reader :page_name, :page_description
+  attr_reader :page_title
 
   def menu_link(name)
     create_menu_link(name)

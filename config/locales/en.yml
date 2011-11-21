@@ -1,20 +1,11 @@
 en:
   page:
-    about:
-      name: 'About'
-      description: 'Some info about me'
-    events:
-      name: 'Events'
-      description: 'Da events'
-    photos:
-      name: 'Photos'
-      description: 'Collection of photos from course and training'
-    videos:
-      name: 'Videos'
-      description: 'Collection of videos of my swing'
-    fallback:
-      name: 'Golf'
-      description: 'Because you are worth it!'
+    about: 'About'
+    events: 'Events'
+    photos: 'Photos'
+    videos: 'Videos'
+    blog_posts: 'Blog'
+    fallback: 'Golf'
   menu:
     admin:
       events: 'Events'
