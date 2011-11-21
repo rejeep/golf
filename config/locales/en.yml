@@ -5,7 +5,7 @@ en:
     photos: 'Photos'
     videos: 'Videos'
     blog_posts: 'Blog'
-    fallback: 'Flog'
+    fallback: 'Leading Edge'
   menu:
     admin:
       events: 'Events'

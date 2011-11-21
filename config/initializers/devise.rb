@@ -207,6 +207,6 @@ Devise.setup do |config|
   #   manager.default_strategies(:scope => :user).unshift :some_external_strategy
   # end
   
-  config.rpx_application_name = 'flog'
-  RPXNow.api_key = '70ee2ad913b3ca2743499a8b66ee84aef9fd036e'
+  config.rpx_application_name = 'leading-edge'
+  RPXNow.api_key = 'e85b761a0c9caa93209b7ce2d9b1a16e24e15c7a'
 end
