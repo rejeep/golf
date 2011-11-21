@@ -11,6 +11,10 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development do
+  gem 'mactag'
+end
+
 gem 'jquery-rails'
 gem 'fancybox-rails'
 gem 'jcrop-rails'
