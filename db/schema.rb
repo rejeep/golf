@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111121101312) do
+ActiveRecord::Schema.define(:version => 20111121111329) do
 
   create_table "blog_posts", :force => true do |t|
     t.string   "title"
@@ -40,6 +40,16 @@ ActiveRecord::Schema.define(:version => 20111121101312) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "users", :force => true do |t|
+    t.string   "email",                             :default => "", :null => false
+    t.string   "encrypted_password", :limit => 128, :default => "", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "rpx_identifier"
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
   create_table "videos", :force => true do |t|
     t.string   "movie"

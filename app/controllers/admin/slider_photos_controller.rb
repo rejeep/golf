@@ -1,6 +1,6 @@
 class Admin::SliderPhotosController < InheritedResources::Base
-  layout 'admin'
-
+  require_user
+  
   def create
     super(&redirect_to_select_dimensions)
   end

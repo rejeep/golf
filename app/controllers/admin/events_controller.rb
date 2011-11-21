@@ -1,3 +1,3 @@
 class Admin::EventsController < InheritedResources::Base
-  layout 'admin'
+  require_user
 end

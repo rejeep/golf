@@ -1,5 +1,5 @@
 class Admin::VideosController < InheritedResources::Base
-  layout 'admin'
+  require_user
 
   def create
     super(&redirect_to_index)

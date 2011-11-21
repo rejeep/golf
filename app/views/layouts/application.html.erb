@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Golf</title>
+    <title>Flog</title>
     <%= stylesheet_link_tag 'application' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
@@ -10,7 +10,7 @@
     <div class="topbar">
       <div class="fill">
         <div class="container">
-          <%= link_to 'Golf', root_path, :class => 'brand' %>
+          <%= link_to 'Flog', root_path, :class => 'brand' %>
           <ul class="nav">
             <%= menu_link :root %>
             <%= menu_link :events %>
@@ -18,7 +18,24 @@
             <%= menu_link :videos %>
             <%= menu_link :about %>
             <%= menu_link :blog_posts %>
+
+            <% if user_signed_in? %>
+              <li>
+                <%= link_to 'Admin', admin_root_path %>
+              </li>
+            <% end %>
           </ul>
+          <div class="pull-right">
+            <ul class="nav">
+              <li>
+                <% if user_signed_in? %>
+                  <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+                <% else %>
+                  <%= link_to_rpx 'Sign in', user_session_url %>
+                <% end %>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -42,15 +59,15 @@
               <%= yield %>
             </div>
           <% end %>
-
         </div>
       </div>
 
       <footer>
-        <p>&copy; Golf <%= Date.today.year %></p>
+        <p>&copy; Flog <%= Date.today.year %></p>
       </footer>
 
     </div>
 
+    <%= javascript_include_rpx(user_session_url) %>
   </body>
 </html>

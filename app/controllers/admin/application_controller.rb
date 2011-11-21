@@ -1,3 +1,3 @@
 class Admin::ApplicationController < ApplicationController
-  layout 'admin'
+  require_user
 end
