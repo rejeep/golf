@@ -47,6 +47,10 @@
         </div>
         <%= yield :slider %>
         <div class="row">
+          <div class="span14">
+            <%= render :partial => 'shared/flash', :object => flash %>
+          </div>
+
           <% if sidebar_content = yield(:sidebar).presence %>
             <div class="span10">
               <%= yield %>

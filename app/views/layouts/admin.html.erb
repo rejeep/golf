@@ -31,14 +31,8 @@
       <div class="content">
         <div class="row">
           <div class="span14">
-            <% if flash.present? %>
-              <div id="flash">
-                <% flash.each do |type, message| %>
-                  <p class="alert-message <%= type %>"><%= message %></p>
-                <% end %>
-              </div>
-            <% end %>
-
+            <%= render :partial => 'shared/flash', :object => flash %>
+            
             <%= yield %>
           </div>
         </div>

@@ -1,0 +1,7 @@
+<% if flash.present? %>
+  <div id="flash">
+    <% flash.each do |type, message| %>
+      <p class="alert-message <%= type %>"><%= message %></p>
+    <% end %>
+  </div>
+<% end %>

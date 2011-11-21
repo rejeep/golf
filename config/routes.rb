@@ -18,6 +18,7 @@ Golf::Application.routes.draw do
 
   root :to => 'startpage#index'
 
+  resources :users
   resources :events
   resources :photos
   resources :videos
