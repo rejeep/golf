@@ -6,8 +6,10 @@
 <% end %>
 
 <% @events.each do |event| %>
-  <h3><%= link_to event.name, event %></h3>
-  <ul class="media-grid">
-    <%= render event.photos %>
-  </ul>
+  <% if photos = event.photos.presence %>
+    <h3><%= link_to event.name, event %></h3>
+    <ul class="media-grid">
+      <%= render photos %>
+    </ul>
+  <% end %>
 <% end %>
