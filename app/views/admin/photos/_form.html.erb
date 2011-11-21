@@ -1,5 +1,10 @@
 <%= simple_form_for [:admin, @photo], :html => { :multipart => true } do |form| %>
-  <%= form.association :event %>
+  <% if event_id = params[:event_id].presence %>
+    <%= form.input :event_id, :as => :hidden, :input_html => { :value => event_id } %>
+  <% else %>
+    <%= form.association :event %>
+  <% end %>
+  
   <% if @photo.image.present? %>
     <%= image_tag @photo.image.url(:thumb) %>
   <% end %>

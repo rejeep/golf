@@ -1,12 +1,25 @@
 <h2>Events</h2>
 
-<ul>
-  <% @events.each do |event| %>
-    <li>
-      <%= link_to event.name, [:admin, event] %>
-      <%= link_to 'edit', edit_admin_event_path(event), :class => 'btn' %>
-    </li>
-  <% end %>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td>
+          <%= link_to event.name, [:admin, event] %>
+        </td>
+        <td>
+          <%= link_to 'Edit', edit_admin_event_path(event), :class => 'btn' %>
+          <%= link_to 'Destroy', admin_event_path(event), :class => 'btn', :method => :delete, :confirm => 'Are you sure?' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<%= link_to 'Add event', new_admin_event_path %>
+<%= link_to 'Add event', new_admin_event_path, :class => 'btn' %>

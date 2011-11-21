@@ -7,16 +7,36 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <h2><%= link_to 'Admin', admin_root_path %></h2>
-
-    <% if flash.present? %>
-      <div id="flash">
-        <% flash.each do |type, message| %>
-          <p class="alert-message <%= type %>"><%= message %></p>
-        <% end %>
+    <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <%= link_to 'Admin', admin_root_path, :class => 'brand' %>
+          <ul class="nav">
+            <%= admin_menu_link :events %>
+            <%= admin_menu_link :photos %>
+            <%= admin_menu_link :videos %>
+            <%= admin_menu_link :slider_photos %>
+          </ul>
+        </div>
       </div>
-    <% end %>
+    </div>
 
-    <%= yield %>
+    <div class="container">
+      <div class="content">
+        <div class="row">
+          <div class="span14">
+            <% if flash.present? %>
+              <div id="flash">
+                <% flash.each do |type, message| %>
+                  <p class="alert-message <%= type %>"><%= message %></p>
+                <% end %>
+              </div>
+            <% end %>
+
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+
   </body>
 </html>

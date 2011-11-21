@@ -1,5 +1,12 @@
-<li>
-  <%= image_tag photo.image.url(:thumb) %>
-  <%= photo.description %>
-  <%= link_to 'edit', edit_admin_photo_path(photo), :class => 'btn' %>
-</li>
+<tr>
+  <td>
+    <%= image_tag photo.image.url(:thumb) %>
+  </td>
+  <td>
+    <%= photo.description %>
+  </td>
+  <td>
+    <%= link_to 'Edit', edit_admin_photo_path(photo), :class => 'btn' %>
+    <%= link_to 'Remove', admin_photo_path(photo), :class => 'btn', :method => :delete, :confirm => 'Are you sure?' %>
+  </td>
+</tr>

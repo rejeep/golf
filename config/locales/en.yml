@@ -16,6 +16,11 @@ en:
       name: 'Golf'
       description: 'Because you are worth it!'
   menu:
+    admin:
+      events: 'Events'
+      photos: 'Photos'
+      videos: 'Videos'
+      slider_photos: 'Slider Photos'
     root: 'Home'
     events: 'Events'
     photos: 'Photos'
