@@ -1,8 +1,6 @@
 class Admin::StartpageController < Admin::ApplicationController
   def index
-    @slider_photos = SliderPhoto.limit(6)
-    @events = Event.limit(6)
-    @videos = Video.limit(6)
-    @photos = Photo.limit(6)
+    @slider_photos, @events, @videos, @photos =
+      [SliderPhoto, Event, Video, Photo].map { |model| model.random(6) }
   end
 end
