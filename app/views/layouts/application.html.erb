@@ -29,12 +29,20 @@
         </div>
         <%= yield :slider%>
         <div class="row">
-          <div class="span10">
-            <%= yield %>
-          </div>
-          <div class="span4">
-            <%= yield :sidebar %>
-          </div>
+
+          <% if sidebar_content = yield(:sidebar).presence %>
+            <div class="span10">
+              <%= yield %>
+            </div>
+            <div class="span4">
+              <%= sidebar_content %>
+            </div>
+          <% else %>
+            <div class="span14">
+              <%= yield %>
+            </div>
+          <% end %>
+
         </div>
       </div>
 
