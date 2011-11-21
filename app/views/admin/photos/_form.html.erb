@@ -1,4 +1,4 @@
-<%= simple_form_for [:admin, @photo], :html => { :multipart => true } do |form| %>
+<%= simple_form_for [:admin, @photo], :html => { :multipart => true, :class => 'form-stacked' } do |form| %>
   <% if event_id = params[:event_id].presence %>
     <%= form.input :event_id, :as => :hidden, :input_html => { :value => event_id } %>
   <% else %>

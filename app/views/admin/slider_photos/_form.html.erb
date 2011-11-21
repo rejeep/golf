@@ -1,4 +1,4 @@
-<%= simple_form_for [:admin, @slider_photo], :html => { :multipart => true } do |form| %>
+<%= simple_form_for [:admin, @slider_photo], :html => { :multipart => true, :class => 'form-stacked' } do |form| %>
   <% if @slider_photo.image.present? %>
     <%= image_tag @slider_photo.image.url, :width => 100 %>
   <% end %>

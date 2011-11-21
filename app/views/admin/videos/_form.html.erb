@@ -1,11 +1,13 @@
-<%= simple_form_for [:admin, @video], :html => { :multipart => true } do |form| %>
+<%= simple_form_for [:admin, @video], :html => { :multipart => true, :class => 'form-stacked' } do |form| %>
   <% if event_id = params[:event_id].presence %>
     <%= form.input :event_id, :as => :hidden, :input_html => { :value => event_id } %>
   <% else %>
     <%= form.association :event %>
   <% end %>
   
-  <%# show video %>
+  <% if @video.movie.present? %>
+    <%= image_tag 'video.jpg' %>
+  <% end %>
   <%= form.input :movie, :as => :file %>
   <%= form.input :description %>
   
