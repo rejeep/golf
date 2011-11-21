@@ -3,6 +3,9 @@ en:
     about:
       name: 'About'
       description: 'Some info about me'
+    events:
+      name: 'Events'
+      description: 'Da events'
     photos:
       name: 'Photos'
       description: 'Collection of photos from course and training'
@@ -14,6 +17,7 @@ en:
       description: 'Because you are worth it!'
   menu:
     root: 'Home'
+    events: 'Events'
     photos: 'Photos'
     videos: 'Videos'
     about: 'About'

@@ -6,12 +6,8 @@
 <% end %>
 
 <% @events.each do |event| %>
-  <h3><%= event.name %></h3>
+  <h3><%= link_to event.name, event %></h3>
   <ul class="media-grid">
-    <% event.photos.each do |photo| %>
-      <li>
-        <%= link_to image_tag(photo.image.url(:thumb)), photo.image.url, :rel => event.id %>
-      </li>
-    <% end %>
+    <%= render event.photos %>
   </ul>
 <% end %>
