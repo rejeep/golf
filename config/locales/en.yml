@@ -21,6 +21,7 @@ en:
       photos: 'Photos'
       videos: 'Videos'
       slider_photos: 'Slider Photos'
+      blog_posts: 'Blog Posts'
     root: 'Home'
     events: 'Events'
     photos: 'Photos'

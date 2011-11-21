@@ -1,0 +1,8 @@
+<tr>
+  <td><%= link_to blog_post.title, [:admin, blog_post] %></td>
+  <td><%= truncate blog_post.description, :length => 150 %></td>
+  <td>
+    <%= link_to 'Edit', edit_admin_blog_post_path(blog_post), :class => 'btn' %>
+    <%= link_to 'Remove', admin_blog_post_path(blog_post), :class => 'btn danger', :method => :delete, :confirm => 'Are you sure?' %>
+  </td>
+</tr>

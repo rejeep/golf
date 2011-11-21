@@ -1,0 +1,8 @@
+<div class="span14">
+  <h2><%= link_to 'Blog Posts', admin_blog_posts_path %></h2>
+  <ul>
+    <% @blog_posts.each do |blog_post| %>
+      <li><%= blog_post.title %></li>
+    <% end %>
+  </ul>
+</div>

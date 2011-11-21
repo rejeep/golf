@@ -5,6 +5,7 @@ Golf::Application.routes.draw do
     resources :photos
     resources :events
     resources :videos
+    resources :blog_posts
     resources :slider_photos do
       member do
         get :select_dimensions

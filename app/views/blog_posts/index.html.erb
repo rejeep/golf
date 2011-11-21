@@ -1,54 +1,13 @@
 <% sidebar do %>
-  <h2>Posts</h2>
+  <h2>Index</h2>
   <ul>
-    <li>Lorem ipsum dolor sit amet</li>
-    <li>Nam commodo eros ac ipsum</li>
+    <% @blog_posts.each do |blog_post| %>
+      <li><%= link_to blog_post.title, blog_post %></li>
+    <% end %>
   </ul>
 <% end %>
 
-<h2>Lorem ipsum dolor sit amet</h2>
-<p>
-  Lorem ipsum dolor sit amet, consectetuer adipiscing
-  elit. Pellentesque in tellus. In pharetra consequat augue. In
-  congue. Curabitur pellentesque iaculis eros. Proin magna odio,
-  posuere sed, commodo nec, varius nec, tortor.
-</p>
-<p>
-  Fusce ante. Curabitur
-  tincidunt. Duis posuere eleifend justo. Sed pulvinar tortor sed
-  ante. Aenean gravida. Integer at ante. Morbi vitae
-  tortor. Vestibulum aliquet, arcu vitae elementum aliquam, tellus
-  justo pretium dolor, eget molestie tellus dui nec dolor. Mauris sit
-  amet ligula. Morbi sit amet sapien mollis neque ultricies placerat.
-</p>
-
-<%= link_to 'read more...', '#' %>
-
-
-<h2>Nam commodo eros ac ipsum</h2>
-<p>
-  Nam commodo eros ac ipsum. Mauris lobortis gravida velit. Mauris a
-  orci ut turpis euismod vehicula. In et est et pede hendrerit
-  pellentesque. Quisque tincidunt consequat dolor. Vestibulum ante
-  ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-  Curae; Mauris imperdiet, neque sit amet varius commodo, nisi enim
-  condimentum est, gravida eleifend velit nisl in pede.
-</p>
-<p>
-  Phasellus
-  metus leo, eleifend vitae, aliquet non, vestibulum at,
-  diam. Praesent eget turpis sed ante convallis euismod. Praesent
-  ante. Lorem ipsum dolor sit amet, consectetuer adipiscing
-  elit. Vestibulum ante ipsum primis in faucibus orci luctus et
-  ultrices posuere cubilia Curae; Cras dui libero, sodales eu, ornare
-  a, fermentum non, erat.
-</p>
-<p>
-  Suspendisse purus elit, suscipit et, lacinia
-  eget, lacinia quis, est. Quisque at pede. Proin a magna. Aliquam
-  tristique ultrices purus. Ut risus dui, facilisis ut, sodales nec,
-  pharetra at, pede. Integer purus felis, ullamcorper vitae, feugiat
-  lobortis, placerat quis, sem.
-</p>
-
-<%= link_to 'read more...', '#' %>
+<% @blog_posts.each do |blog_post| %>
+  <h2><%= link_to blog_post.title, blog_post %></h2>
+  <%= markdown blog_post.description %>
+<% end %>
