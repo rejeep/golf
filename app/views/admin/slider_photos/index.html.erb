@@ -1,5 +1,15 @@
 <h2>Slider Photos</h2>
-<ul>
-  <%= render @slider_photos %>
-</ul>
-<%= link_to 'Add slider photo', new_admin_slider_photo_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @slider_photos %>
+  </tbody>
+</table>
+
+<%= link_to 'Add slider photo', new_admin_slider_photo_path, :class => 'btn' %>
