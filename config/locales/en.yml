@@ -14,3 +14,7 @@ en:
       description: 'Because you are worth it!'
   menu:
     root: 'Home'
+    photos: 'Photos'
+    videos: 'Videos'
+    about: 'About'
+    blog_posts: 'Blog'
