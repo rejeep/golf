@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111121183259) do
+ActiveRecord::Schema.define(:version => 20111122085746) do
 
   create_table "blog_posts", :force => true do |t|
     t.string   "title"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20111121183259) do
     t.string   "rpx_identifier"
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "role"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

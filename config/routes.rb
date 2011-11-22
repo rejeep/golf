@@ -4,6 +4,12 @@ Golf::Application.routes.draw do
   namespace :admin do
     root :to => 'startpage#index'
 
+    resources :users do
+      member do
+        put :promote
+        put :degrade
+      end
+    end
     resources :photos
     resources :events
     resources :videos

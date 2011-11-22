@@ -7,8 +7,6 @@ class ApplicationController < ActionController::Base
 
   def validate_user_name
     if user_signed_in? and not current_user.name?
-      session[:redirect_to] = request.path
-      
       redirect_to edit_user_path(current_user)
     end
   end

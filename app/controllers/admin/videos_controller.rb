@@ -1,18 +1,11 @@
 class Admin::VideosController < InheritedResources::Base
-  require_user
+  require_admin
 
   def create
-    super(&redirect_to_index)
-  end
+    super do
+      @video.upload_video(params[:video][:movie].tempfile)
 
-  def update
-    super(&redirect_to_index)
-  end
-
-
-  private
-
-  def redirect_to_index
-    Proc.new { admin_videos_path }
+      admin_videos_path
+    end
   end
 end

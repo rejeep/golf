@@ -1,1 +1,1 @@
-ActionController::Base.send(:include, RequireUser)
+ActionController::Base.send(:include, UserAuthentication)

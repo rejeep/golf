@@ -1,5 +1,5 @@
 class Admin::StartpageController < Admin::ApplicationController
-  require_user
+  require_admin
   
   def index
     @slider_photos, @events, @videos, @photos, @blog_posts =

@@ -1,5 +1,5 @@
 class Admin::PhotosController < InheritedResources::Base
-  require_user
+  require_admin
 
   def create
     super(&redirect_to_index)

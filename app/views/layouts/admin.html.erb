@@ -17,6 +17,9 @@
             <%= admin_menu_link :photos %>
             <%= admin_menu_link :videos %>
             <%= admin_menu_link :blog_posts %>
+            <% if current_user.super_admin? %>
+              <%= admin_menu_link :users %>
+            <% end %>
           </ul>
           <div class="pull-right">
             <ul class="nav">

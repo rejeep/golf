@@ -1,0 +1,34 @@
+<h2>Users</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Name</th>
+      <th>Role</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><%= user.name %></td>
+        <td><%= role_name(user) %></td>
+        <td>
+          <% if user.user? %>
+            <%= link_to 'Promote to Admin', promote_admin_user_path(user), :class => 'btn', :method => :put %>
+          <% elsif user.admin? %>
+            <%= link_to 'Promote to Super Admin', promote_admin_user_path(user), :class => 'btn', :method => :put %>
+          <% end %>
+          
+          <% if user.super_admin? && user != current_user %>
+            <%= link_to 'Degrade to Admin', degrade_admin_user_path(user), :class => 'btn', :method => :put %>
+          <% elsif user.admin? %>
+            <%= link_to 'Degrade to User', degrade_admin_user_path(user), :class => 'btn', :method => :put %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

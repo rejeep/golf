@@ -6,6 +6,6 @@ class UsersController < InheritedResources::Base
   end
 
   def update
-    super { session[:redirect_to] || root_path }
+    super { root_path }
   end
 end
