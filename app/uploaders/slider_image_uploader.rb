@@ -1,7 +1,7 @@
 class SliderImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
 
-  storage :file
+  storage :fog
   
   process :resize_to_fit => [SliderPhoto::WIDTH * 2, 10000]
   
