@@ -8,6 +8,6 @@ jQuery ->
     slider.nivoSlider(
       effect: 'fade'
       pauseTime: 5000
-      animSpeed: 2000
+      animSpeed: 1000
       directionNav: false
       controlNav: false)
