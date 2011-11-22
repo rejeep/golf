@@ -13,6 +13,7 @@ end
 
 group :development do
   gem 'mactag'
+  gem 'heroku'
 end
 
 gem 'jquery-rails'
