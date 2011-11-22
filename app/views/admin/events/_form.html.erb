@@ -1,5 +1,7 @@
 <%= simple_form_for [:admin, @event], :html => { :class => 'form-stacked' } do |form| %>
   <%= form.input :name %>
+  <%= form.input :start_date %>
+  <%= form.input :end_date %>
   
   <%= form.submit :class => 'btn' %>
 <% end %>
