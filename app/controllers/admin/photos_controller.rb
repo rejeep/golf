@@ -2,6 +2,9 @@ class Admin::PhotosController < InheritedResources::Base
   require_admin
 
   def create
+    @photo = Photo.new(params[:photo])
+    @photo.user = current_user
+
     super(&redirect_to_index)
   end
 

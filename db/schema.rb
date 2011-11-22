@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111122095015) do
+ActiveRecord::Schema.define(:version => 20111122103256) do
 
   create_table "blog_posts", :force => true do |t|
     t.string   "title"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20111122095015) do
     t.datetime "updated_at"
     t.date     "start_date"
     t.date     "end_date"
+    t.integer  "user_id"
   end
 
   create_table "photos", :force => true do |t|
@@ -35,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20111122095015) do
     t.datetime "updated_at"
     t.string   "image"
     t.integer  "event_id"
+    t.integer  "user_id"
   end
 
   create_table "slider_photos", :force => true do |t|
@@ -62,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20111122095015) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "event_id"
+    t.integer  "user_id"
   end
 
 end

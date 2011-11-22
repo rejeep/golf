@@ -1,5 +1,9 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :rpx_connectable
+  
+  has_many :events
+  has_many :photos
+  has_many :videos
 
   def name
     "#{first_name} #{last_name}"
