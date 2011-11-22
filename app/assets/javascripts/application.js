@@ -7,4 +7,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require fancybox
+//= require shared.js
 //= require_tree .

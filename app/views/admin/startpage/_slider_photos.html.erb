@@ -9,7 +9,7 @@
   <ul class="media-grid">
     <% @slider_photos.each do |slider_photo| %>
       <li>
-        <%= link_to image_tag(slider_photo.image.url(:thumb)), '#', :rel => 'slider-photo' %>
+        <%= link_to image_tag(slider_photo.image.url(:thumb)), slider_photo.image.url, :rel => 'slider-photo', :class => 'fancybox' %>
       </li>
     <% end %>
   </ul>

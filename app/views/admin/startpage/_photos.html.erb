@@ -3,7 +3,7 @@
   <ul class="media-grid">
     <% @photos.each do |photo| %>
       <li>
-        <%= link_to image_tag(photo.image.url(:thumb)), edit_admin_photo_path(photo) %>
+        <%= link_to image_tag(photo.image.url(:thumb)), photo.image.url, :rel => 'photo', :class => 'fancybox' %>
       </li>
     <% end %>
   </ul>

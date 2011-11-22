@@ -8,4 +8,5 @@
 //= require jquery_ujs
 //= require fancybox
 //= require jcrop
+//= require shared.js
 //= require_tree ./admin

@@ -3,7 +3,7 @@
   <ul class="media-grid">
     <% @videos.each do |video| %>
       <li>
-        <%= link_to image_tag('video.jpg'), edit_admin_video_path(video) %>
+        <%= youtube_thumbnail video %>
       </li>
     <% end %>
   </ul>
