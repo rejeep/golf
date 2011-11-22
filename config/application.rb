@@ -42,6 +42,9 @@ module Golf
 
     # Enable the asset pipeline
     config.assets.enabled = true
+    
+    # Precompile assets in admin section
+    config.assets.precompile += ['admin.js', 'admin.css']
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
