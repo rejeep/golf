@@ -6,6 +6,8 @@ class SliderPhoto < ActiveRecord::Base
   
   attr_writer :x, :y, :w, :h
   
+  validates :image, :presence => true
+  
   def crop!
     image.manipulate! do |img|
       img.crop!(x, y, w, h)
