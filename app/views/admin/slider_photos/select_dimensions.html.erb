@@ -8,6 +8,6 @@
     <%= image_tag @slider_photo.image.url, :width => SliderPhoto::WIDTH %>
     <%= form.input :image, :as => :hidden %>
 
-    <%= form.submit %>
+    <%= form.submit :class => 'btn' %>
   <% end %>
 </div>
