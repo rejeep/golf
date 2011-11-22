@@ -8,6 +8,9 @@
 <% end %>
 
 <% @blog_posts.each do |blog_post| %>
-  <h2><%= link_to blog_post.title, blog_post %></h2>
+  <h2>
+    <%= link_to blog_post.title, blog_post %>
+    <small>by <%= blog_post.user.name %></small>
+  </h2>
   <%= markdown blog_post.description %>
 <% end %>

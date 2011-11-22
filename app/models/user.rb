@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :events
   has_many :photos
   has_many :videos
+  has_many :blog_posts
 
   def name
     "#{first_name} #{last_name}"
