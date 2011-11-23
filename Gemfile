@@ -31,4 +31,5 @@ group :development do
   gem 'mactag'
   gem 'heroku'
   gem 'sqlite3'
+  gem 'mongrel', '>= 1.2.0.pre2'
 end
