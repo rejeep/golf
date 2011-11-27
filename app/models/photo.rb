@@ -1,8 +1,9 @@
 class Photo < ActiveRecord::Base
-  mount_uploader :image, ImageUploader
-
   belongs_to :user
-  belongs_to :event
   
-  validates :description, :event, :image, :presence => true
+  validates :description, :image, :presence => true
+  
+  mount_uploader :image, ImageUploader
+  
+  acts_as_taggable
 end

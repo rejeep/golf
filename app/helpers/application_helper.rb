@@ -1,10 +1,6 @@
 module ApplicationHelper
   attr_reader :page_title
 
-  def menu_link(name)
-    create_menu_link(name)
-  end
-
   def admin_menu_link(name)
     create_menu_link(name, :admin)
   end

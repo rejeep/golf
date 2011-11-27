@@ -1,9 +1,8 @@
 <%= simple_form_for [:admin, @video], :html => { :multipart => true, :class => 'form-stacked' } do |form| %>
-  <%= form.association :event, :selected => (params[:event_id] || @video.event.try(:id)), :include_blank => true %>
-  
   <%= form.input :movie, :as => :file %>
   <%= form.input :title %>
   <%= form.input :description %>
-  
+  <%= form.input :tag_ids %>
+
   <%= form.submit :class => 'btn' %>
 <% end %>

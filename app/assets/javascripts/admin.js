@@ -6,7 +6,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
+//= require autocomplete-rails
 //= require fancybox
 //= require jcrop
+//= require jquery.tokeninput
 //= require shared.js
 //= require_tree ./admin

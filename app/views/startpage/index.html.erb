@@ -1,16 +1,3 @@
-
-<% slider do %>
-  <div class="row">
-    <div id="slider" class="offset1 span12">
-      <% @slider_photos.each do |slider_photo| %>
-        <%= image_tag slider_photo.image.url %>
-      <% end %>
-    </div>
-  </div>
-<% end %>
-
-<% @blog_posts.each do |blog_post| %>
-  <h2><%= blog_post.title %></h2>
-  <%= markdown truncate(blog_post.description, :length => 500) %>
-  <%= link_to 'read more...', blog_post %>
+<% if user_signed_in? %>
+  <%= render 'users/show' %>
 <% end %>

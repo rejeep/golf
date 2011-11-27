@@ -1,11 +1,10 @@
 <%= simple_form_for [:admin, @photo], :html => { :multipart => true, :class => 'form-stacked' } do |form| %>
-  <%= form.association :event, :selected => (params[:event_id] || @photo.event.try(:id)), :include_blank => true %>
-  
   <% if @photo.image.present? %>
     <%= image_tag @photo.image.url(:thumb) %>
   <% end %>
   <%= form.input :image, :as => :file %>
   <%= form.input :description %>
+  <%= form.input :tag_ids %>
   
   <%= form.submit :class => 'btn' %>
 <% end %>

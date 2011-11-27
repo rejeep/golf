@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :rpx_connectable
-  
-  has_many :events
+
   has_many :photos
   has_many :videos
   has_many :blog_posts
@@ -33,7 +32,7 @@ class User < ActiveRecord::Base
       update_attribute(:role, 'super_admin')
     end
   end
-  
+
   def degrade!
     if admin?
       update_attribute(:role, nil)

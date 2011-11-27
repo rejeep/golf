@@ -1,15 +1,1 @@
-<% sidebar do %>
-  <h2>Events</h2>
-  <ul>
-    <%= render @events %>
-  </ul>
-<% end %>
 
-<% @events.each do |event| %>
-  <% if photos = event.photos.presence %>
-    <h2><%= link_to event.name, event %></h2>
-    <ul class="media-grid">
-      <%= render photos %>
-    </ul>
-  <% end %>
-<% end %>

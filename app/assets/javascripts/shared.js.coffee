@@ -13,3 +13,5 @@ jQuery ->
       wmode: 'transparent'
       allowfullscreen: true
   )
+
+  $('#video_tag_ids, #photo_tag_ids').tokenInput('/tags', theme: 'facebook')
