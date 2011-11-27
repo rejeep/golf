@@ -1,9 +1,0 @@
-<% @events.each do |event| %>
-  <h2><%= link_to event.name, event %></h2>
-
-  <ul class="media-grid">
-    <% if media = (event.random_photos + event.random_videos).shuffle.presence %>
-      <%= render media %>
-    <% end %>
-  </ul>
-<% end %>

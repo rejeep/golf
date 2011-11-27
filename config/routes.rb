@@ -11,7 +11,6 @@ Golf::Application.routes.draw do
       end
     end
     resources :photos
-    resources :events
     resources :videos
     resources :blog_posts
     resources :slider_photos do
@@ -24,8 +23,8 @@ Golf::Application.routes.draw do
 
   root :to => 'startpage#index'
 
+  resources :tags
   resources :users
-  resources :events
   resources :photos
   resources :videos
   resources :blog_posts

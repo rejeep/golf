@@ -1,9 +1,0 @@
-<h2><%= @event.name %></h2>
-
-<h3>Photos</h3>
-<%= render :partial => 'admin/photos/photos', :object => @event.photos %>
-<%= link_to 'Add photo', new_admin_photo_path(:event_id => @event), :class => 'btn' %>
-
-<h3>Videos</h3>
-<%= render :partial => 'admin/videos/videos', :object => @event.videos %>
-<%= link_to 'Add video', new_admin_video_path(:event_id => @event), :class => 'btn' %>

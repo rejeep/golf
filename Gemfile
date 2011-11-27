@@ -2,11 +2,11 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.3'
 
-
 gem 'jquery-rails'
 gem 'fancybox-rails'
 gem 'jcrop-rails'
 gem 'css-bootstrap-rails'
+gem 'rails3-jquery-autocomplete'
 
 gem 'json'
 gem 'pg', '0.11.0'
@@ -20,6 +20,7 @@ gem 'redcarpet', '1.17.2'
 gem 'devise', '1.5.0'
 gem 'devise_rpx_connectable', '0.2.2'
 gem 'youtube_it', '2.0.1'
+gem 'acts-as-taggable-on', '2.1.1'
 
 group :assets do
   gem 'sass-rails', '~> 3.1.4'
