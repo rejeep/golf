@@ -1,2 +1,2 @@
-class MovieUploader < SecureUploader
+class MovieUploader < RandomUploader
 end

@@ -1,4 +1,4 @@
-class SecureUploader < CarrierWave::Uploader::Base
+class RandomUploader < CarrierWave::Uploader::Base
   def filename
     "#{secure_token(10)}.#{file.extension}" if original_filename.present?
   end

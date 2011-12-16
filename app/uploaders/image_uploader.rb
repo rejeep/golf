@@ -1,4 +1,4 @@
-class ImageUploader < SecureUploader
+class ImageUploader < RandomUploader
   include CarrierWave::RMagick
 
   version :thumb do
