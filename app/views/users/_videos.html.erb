@@ -34,7 +34,7 @@
             <%= video.description %>
           </td>
           <td>
-            <%= render :partial => 'tags/tags', :object => video.tags %>
+            <%= render_tags video.tags %>
           </td>
           <td>
             <%= link_to 'Edit', edit_video_path(video), :class => 'btn' %>

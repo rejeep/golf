@@ -32,7 +32,7 @@
             <%= photo.description %>
           </td>
           <td>
-            <%= render :partial => 'tags/tags', :object => photo.tags %>
+            <%= render_tags photo.tags %>
           </td>
           <% if me?(@user) %>
             <td>

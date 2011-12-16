@@ -20,6 +20,10 @@ module ApplicationHelper
   def tags_for(taggable)
     taggable.tags.map { |tag| { :id => tag.id, :name => tag.name } }.to_json
   end
+  
+  def render_tags(tags)
+    tags.map { |tag| tag.name }.join(', ')
+  end
 
 
   private
