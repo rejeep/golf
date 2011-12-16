@@ -20,7 +20,7 @@ gem 'redcarpet', '1.17.2'
 gem 'devise', '1.5.0'
 gem 'devise_rpx_connectable', '0.2.2'
 gem 'youtube_it', '2.0.1'
-gem 'acts-as-taggable-on', '2.1.1'
+gem 'acts-as-taggable-on', '2.2.0'
 
 group :assets do
   gem 'sass-rails', '~> 3.1.4'
@@ -31,6 +31,6 @@ end
 group :development do
   gem 'mactag'
   gem 'heroku'
-  gem 'sqlite3'
+  gem 'mysql2'
   gem 'mongrel', '>= 1.2.0.pre2'
 end

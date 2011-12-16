@@ -1,4 +1,5 @@
 <h2><%= @blog_post.title %></h2>
 <%= markdown @blog_post.description %>
 
-<%= link_to 'Back to blog posts', blog_posts_path, :class => 'btn' %>
+<%= link_to 'Edit', edit_blog_post_path(@blog_post), :class => 'btn' %>
+<%= link_to 'Remove', blog_post_path(@blog_post), :class => 'btn danger', :method => :delete, :confirm => 'Are you sure?' %>

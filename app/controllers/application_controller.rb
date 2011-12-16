@@ -11,4 +11,14 @@ class ApplicationController < ActionController::Base
     end
   end
   before_filter :validate_user_name
+  
+  def me?(user)
+    current_user == user
+  end
+  helper_method :me?
+  
+  def admin?
+    current_user && current_user.admin?
+  end
+  helper_method :admin?
 end

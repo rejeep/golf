@@ -9,16 +9,16 @@ module ApplicationHelper
     content_for(:sidebar, &block)
   end
 
-  def slider(&block)
-    content_for(:slider, &block)
-  end
-
   def markdown(text)
     Markdown.new(text).to_html.html_safe
   end
 
   def youtube_thumbnail(video)
     link_to(image_tag("http://img.youtube.com/vi/#{video.youtube_id}/default.jpg"), "http://www.youtube.com/v/#{video.youtube_id}&feature=player_embedded", :class => 'youtube_thumbnail')
+  end
+
+  def tags_for(taggable)
+    taggable.tags.map { |tag| { :id => tag.id, :name => tag.name } }.to_json
   end
 
 

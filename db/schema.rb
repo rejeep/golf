@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111124085557) do
+ActiveRecord::Schema.define(:version => 20111216143853) do
 
   create_table "blog_posts", :force => true do |t|
     t.string   "title"
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(:version => 20111124085557) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
-    t.integer  "event_id"
     t.integer  "user_id"
   end
 
@@ -53,14 +52,14 @@ ActiveRecord::Schema.define(:version => 20111124085557) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                             :default => "", :null => false
-    t.string   "encrypted_password", :limit => 128, :default => "", :null => false
+    t.string   "email",                             :default => "",    :null => false
+    t.string   "encrypted_password", :limit => 128, :default => "",    :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "rpx_identifier"
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "role"
+    t.boolean  "admin",                             :default => false, :null => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
@@ -69,10 +68,10 @@ ActiveRecord::Schema.define(:version => 20111124085557) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "event_id"
     t.string   "title"
     t.string   "youtube_id"
     t.integer  "user_id"
+    t.string   "movie"
   end
 
 end

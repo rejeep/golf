@@ -1,0 +1,12 @@
+<%= simple_form_for @photo, :html => { :multipart => true, :class => 'form-stacked' } do |form| %>
+  <% if @photo.image.present? %>
+    <%= image_tag @photo.image.url(:thumb) %>
+  <% else %>
+    <%= form.input :image, :as => :file %>
+  <% end %>
+  
+  <%= form.input :description %>
+  <%= form.input :tag_list_ids, :input_html => { 'data-pre' => tags_for(@photo) } %>
+
+  <%= form.submit :class => 'btn' %>
+<% end %>

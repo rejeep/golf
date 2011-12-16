@@ -1,0 +1,2 @@
+class MovieUploader < SecureUploader
+end

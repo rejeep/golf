@@ -1,0 +1,49 @@
+<% @videos = @user.videos %>
+
+<h2>
+  Videos
+
+  <small>
+    <% if @user == current_user %>
+      <%= link_to 'Add video', new_video_path %>
+    <% end %>
+  </small>
+</h2>
+
+<% if @videos.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Video</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Tags</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @videos.each do |video| %>
+        <tr>
+          <td>
+            <%= youtube_thumbnail video %>
+          </td>
+          <td>
+            <%= video.title %>
+          </td>
+          <td>
+            <%= video.description %>
+          </td>
+          <td>
+            <%= render :partial => 'tags/tags', :object => video.tags %>
+          </td>
+          <td>
+            <%= link_to 'Edit', edit_video_path(video), :class => 'btn' %>
+            <%= link_to 'Remove', video_path(video), :class => 'btn danger', :method => :delete, :confirm => 'Are you sure?' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>Player has no videos</p>
+<% end %>

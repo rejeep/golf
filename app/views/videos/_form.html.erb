@@ -1,0 +1,14 @@
+<%= simple_form_for @video, :html => { :multipart => true, :class => 'form-stacked' } do |form| %>
+
+  <% if @video.new_record? %>
+    <%= form.input :movie, :as => :file %>
+  <% else %>
+    <%= youtube_thumbnail @video %>
+  <% end %>
+
+  <%= form.input :title %>
+  <%= form.input :description %>
+  <%= form.input :tag_list_ids, :input_html => { 'data-pre' => tags_for(@video) } %>
+
+  <%= form.submit :class => 'btn' %>
+<% end %>

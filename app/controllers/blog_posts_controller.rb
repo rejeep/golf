@@ -1,9 +1,10 @@
-class BlogPostsController < ApplicationController
-  def index
-    @blog_posts = BlogPost.all
-  end
+class BlogPostsController < InheritedResources::Base
+  before_filter :authenticate_user!, :except => [:index, :show]
+  
+  def create
+    @blog_post = BlogPost.new(params[:blog_post])
+    @blog_post.user = current_user
 
-  def show
-    @blog_post = BlogPost.find(params[:id])
+    super { blog_post_path(@blog_post) }
   end
 end

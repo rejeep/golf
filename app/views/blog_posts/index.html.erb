@@ -1,16 +1,5 @@
-<% sidebar do %>
-  <h2>Index</h2>
-  <ul>
-    <% @blog_posts.each do |blog_post| %>
-      <li><%= link_to blog_post.title, blog_post %></li>
-    <% end %>
-  </ul>
-<% end %>
+<%= render 'blog_posts/blog_posts' %>
 
-<% @blog_posts.each do |blog_post| %>
-  <h2>
-    <%= link_to blog_post.title, blog_post %>
-    <small>by <%= blog_post.user.name %></small>
-  </h2>
-  <%= markdown blog_post.description %>
+<% if admin? %>
+  <%= link_to 'Add new blog post', new_blog_post_path, :class => 'btn' %>
 <% end %>

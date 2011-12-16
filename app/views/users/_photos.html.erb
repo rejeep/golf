@@ -1,0 +1,53 @@
+<% @photos = @user.photos %>
+
+<h2>
+  Photos
+
+  <small>
+    <% if me?(@user) %>
+      <%= link_to 'Add photo', new_photo_path %>
+    <% end %>
+  </small>
+</h2>
+
+<% if @photos.present? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Photo</th>
+        <th>Description</th>
+        <th>Tags</th>
+        <% if me?(@user) %>
+          <th>Actions</th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% @photos.each do |photo| %>
+        <tr>
+          <td>
+            <%= link_to image_tag(photo.image.url(:thumb)), photo.image.url, :class => 'fancybox', :rel => 'photos' %>
+          </td>
+          <td>
+            <%= photo.description %>
+          </td>
+          <td>
+            <%= render :partial => 'tags/tags', :object => photo.tags %>
+          </td>
+          <% if me?(@user) %>
+            <td>
+              <%= link_to 'Edit', edit_photo_path(photo), :class => 'btn' %>
+              <%= link_to 'Remove', photo, :class => 'btn danger', :method => :delete, :confirm => 'Are you sure?' %>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <% if me?(@user) %>
+    <p>You have no photos</p>
+  <% else %>
+    <p>Player has no photos</p>
+  <% end %>
+<% end %>

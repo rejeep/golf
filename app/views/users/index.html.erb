@@ -1,0 +1,28 @@
+<table>
+  <thead>
+    <tr>
+      <th>
+        <% if @query %>
+          <% if @users.empty? %>
+            No players found
+          <% else %>
+            Search results for "<%= @query %>"
+          <% end %>
+        <% end %>
+      </th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td>
+          <%= link_to user.name, user %>
+        </td>
+        <td>
+          <%= link_to 'Add as friend', user.name, :class => 'btn' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
