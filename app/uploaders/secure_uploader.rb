@@ -1,17 +1,11 @@
 class SecureUploader < CarrierWave::Uploader::Base
   def filename
-    if @filename
-      name = @filename.chomp(".#{file.extension}")
-
-      "#{secure_token}-#{name}.#{file.extension}" if original_filename.present?
-    end
+    "#{secure_token(10)}.#{file.extension}" if original_filename.present?
   end
 
-  
   protected
-  
-  def secure_token
+  def secure_token(length=16)
     var = :"@#{mounted_as}_secure_token"
-    model.instance_variable_get(var) or model.instance_variable_set(var, SecureRandom.hex(8))
+    model.instance_variable_get(var) or model.instance_variable_set(var, SecureRandom.hex(length/2))
   end
 end
