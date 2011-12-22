@@ -29,7 +29,7 @@ group :assets do
 end
 
 group :development do
-  gem 'mactag'
+  gem 'mactag', :git => 'git://github.com/rejeep/mactag.git'
   gem 'heroku'
   gem 'mysql2'
   gem 'mongrel', '>= 1.2.0.pre2'

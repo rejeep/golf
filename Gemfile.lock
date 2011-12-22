@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/rejeep/mactag.git
+  revision: b65ab8ac282d52d085a8334ecc63f30390055e93
+  specs:
+    mactag (0.5.4)
+      rails (>= 3.0.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -98,8 +105,6 @@ GEM
     json_pure (1.6.1)
     launchy (2.0.5)
       addressable (~> 2.2.6)
-    mactag (0.5.4)
-      rails (>= 3.0.0)
     mail (2.3.0)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -207,7 +212,7 @@ DEPENDENCIES
   jcrop-rails
   jquery-rails
   json
-  mactag
+  mactag!
   mongrel (>= 1.2.0.pre2)
   mysql2
   pg (= 0.11.0)
