@@ -13,8 +13,15 @@
           <%= link_to 'Leading Edge', root_path, :class => 'brand' %>
           <ul class="nav">
             <%= render 'shared/search' %>
-            
-            <li><%= link_to 'Blog', blog_posts_path %></li>
+
+            <li>
+              <%= link_to 'Blog', blog_posts_path %>
+            </li>
+            <% if admin? %>
+              <li>
+                <%= link_to 'Tags', acts_as_taggable_on_tags_path %>
+              </li>
+            <% end %>
           </ul>
           <div class="pull-right">
             <ul class="nav">

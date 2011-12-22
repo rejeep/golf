@@ -1,0 +1,24 @@
+<h2>Tags</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tags.each do |tag| %>
+      <tr>
+        <td>
+          <%= link_to tag.name, edit_acts_as_taggable_on_tag_path(tag) %>
+        </td>
+        <td>
+          <%= link_to 'remove', acts_as_taggable_on_tag_path(tag), :method => :delete, :confirm => 'Are you sure?', :class => 'btn danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Create new tag', new_acts_as_taggable_on_tag_path, :class => 'btn' %>

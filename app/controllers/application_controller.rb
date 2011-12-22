@@ -21,4 +21,8 @@ class ApplicationController < ActionController::Base
     current_user && current_user.admin?
   end
   helper_method :admin?
+  
+  def permission_denied!
+    render :text => 'foo'
+  end
 end
